@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: JDCloud-AX6000-Baili-RE-CP-03
+name: JDCloud-AX6000-Baili-RE-CP-03-OpenWRT-21.02
 
 on:
   repository_dispatch:
