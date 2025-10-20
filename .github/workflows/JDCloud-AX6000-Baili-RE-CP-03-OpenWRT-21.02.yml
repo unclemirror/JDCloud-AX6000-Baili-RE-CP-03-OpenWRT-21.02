@@ -23,6 +23,7 @@ on:
 
 env:
   ###############手动修改##############
+  OPENWRT_NAME: hanwckf
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
@@ -181,7 +182,7 @@ jobs:
         echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
         echo "- 使用分支：${{ env.REPO_BRANCH }}" >> release.txt
         echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
-        echo "- 使用WiFi驱动${{ github.event.inputs.WIFI_DRIVER }}" >> release.txt
+        echo "- 使用WiFi驱动${{ env.WIFI_VERSION }}" >> release.txt
         if [[ "${{ env.SWITCH }}" == '-gsw' ]]; then
                echo "- 使用GSW交换机驱动（非DSA）" >> release.txt
         else
