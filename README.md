@@ -4,7 +4,7 @@
 
 #### hanwckf大佬mt798x uboot仓库- [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x).
 
-#### 加菲猫大佬刷机教程与闭源仓库- [lgs2007m/Actions-OpenWrt](https://github.com/lgs2007m/Actions-OpenWrt).
+#### 加菲猫大佬刷机教程与固件仓库- [lgs2007m/Actions-OpenWrt](https://github.com/lgs2007m/Actions-OpenWrt).
 
 ### 刷砖也不怕！可以通过串口救砖：[MediaTek Filogic 系列路由器串口救砖教程](https://www.cnblogs.com/p123/p/18046679)
 
@@ -14,6 +14,22 @@
 
 - #### 说明
 设置LAN IP地址（路由器登录地址），默认192.168.1.1。
+
+```
+# SSH查看内核版本
+uname -a
+# 查看WiFi驱动版本
+iwpriv ra0 get_driverinfo
+# 查看WiFi驱动mt_wifi mt7986 firmware版本
+strings /lib/firmware/7986_WACPU_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
+strings /lib/firmware/mt7986_patch_e1_hdr.bin | grep -E '202[0-9]{6}'
+strings /lib/firmware/mt7986_patch_e1_hdr_mt7975.bin | grep -E '202[0-9]{6}'
+strings /lib/firmware/WIFI_RAM_CODE_MT7986.bin | grep -E '202[0-9]{6}'
+strings /lib/firmware/WIFI_RAM_CODE_MT7986_MT7975.bin | grep -E '202[0-9]{6}'
+# 查看WiFi驱动warp mt7986 firmware版本
+strings /lib/firmware/7986_WOCPU0_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
+strings /lib/firmware/7986_WOCPU1_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
+```
 
 - #### Other
 百里5G无线发射功率23dBm，2.4G发送功率25dBm。大佬们已研究出修改5G发射功率的方法。  
