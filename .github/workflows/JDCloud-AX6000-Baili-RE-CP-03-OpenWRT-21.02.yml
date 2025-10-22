@@ -162,16 +162,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
-        echo "- 使用分支：${{ env.REPO_BRANCH }}" >> release.txt
-        echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
-        if [[ "${{ env.BUILD_DOCKERMAN }}" == '-docker' ]]; then
-                echo "- 已编译luci-app-dockerman" >> release.txt
-        else
-                echo "- 未编译luci-app-dockerman" >> release.txt
-        fi
-        echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}${{ env.BUILD_DOCKERMAN }}" >> $GITHUB_OUTPUT
+        [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
