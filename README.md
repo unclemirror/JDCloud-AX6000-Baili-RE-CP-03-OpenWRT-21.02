@@ -11,25 +11,8 @@
 ---
 ## JDCloud-AX6000-Baili workflow 手动运行可选项：
 - Set LAN IP Address
-
 - #### 说明
 设置LAN IP地址（路由器登录地址），默认192.168.1.1。
-
-```
-# SSH查看内核版本
-uname -a
-# 查看WiFi驱动版本
-iwpriv ra0 get_driverinfo
-# 查看WiFi驱动mt_wifi mt7986 firmware版本
-strings /lib/firmware/7986_WACPU_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
-strings /lib/firmware/mt7986_patch_e1_hdr.bin | grep -E '202[0-9]{6}'
-strings /lib/firmware/mt7986_patch_e1_hdr_mt7975.bin | grep -E '202[0-9]{6}'
-strings /lib/firmware/WIFI_RAM_CODE_MT7986.bin | grep -E '202[0-9]{6}'
-strings /lib/firmware/WIFI_RAM_CODE_MT7986_MT7975.bin | grep -E '202[0-9]{6}'
-# 查看WiFi驱动warp mt7986 firmware版本
-strings /lib/firmware/7986_WOCPU0_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
-strings /lib/firmware/7986_WOCPU1_RAM_CODE_release.bin | grep -E '202[0-9]{6}'
-```
 
 - #### Other
 百里5G无线发射功率23dBm，2.4G发送功率25dBm。大佬们已研究出修改5G发射功率的方法。  
