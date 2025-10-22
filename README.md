@@ -13,6 +13,15 @@
 - #### Set LAN IP Address
 设置LAN IP地址（路由器登录地址），默认192.168.1.1。
 
+---
+## 关于脚本的一些说明
+- #### 使用源码：https://github.com/hanwckf/immortalwrt-mt798x
+- #### 使用分支：openwrt-21.02 内核版本：5.4.284
+- #### 使用NekokeCore大佬修改的软件源和luci-theme-design主题
+- #### 使用WiFi驱动v7.6.7.2-fw-20240823
+- #### 使用GSW交换机驱动（非DSA）
+- #### 使用hanwckf mtwifi-cfg原生luci无线配置工具
+- #### 已完全禁用ipv6，此举是防止DNS泄露的第一步
 - #### Other
 百里5G无线发射功率23dBm，2.4G发送功率25dBm。大佬们已研究出修改5G发射功率的方法。  
 其中各个功率十六进制数据代表如下：  
