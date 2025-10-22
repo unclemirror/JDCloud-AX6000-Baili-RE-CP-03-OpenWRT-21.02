@@ -11,7 +11,6 @@
 ---
 ## JDCloud-AX6000-Baili workflow 手动运行可选项：
 - Set LAN IP Address
-- #### 说明
 设置LAN IP地址（路由器登录地址），默认192.168.1.1。
 
 - #### Other
