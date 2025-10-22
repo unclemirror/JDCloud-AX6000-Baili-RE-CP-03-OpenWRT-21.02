@@ -19,13 +19,13 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-##-----------------Replace OpenClash------------------
+##-----------------Replace latest OpenClash------------------
 git clone --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
 mv /tmp/OpenClash/luci-app-openclash feeds/luci/applications/luci-app-openclash
 rm -rf /tmp/OpenClash
 
-##-----------------Add OpenClash meta core------------------
+##-----------------Add latest OpenClash meta core------------------
 curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz -o /tmp/clash.tar.gz
 tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
 chmod +x /tmp/clash >/dev/null 2>&1
