@@ -76,8 +76,8 @@ CONFIG_PACKAGE_mtwifi-cfg=y
 CONFIG_PACKAGE_lua-cjson=y  
 
 - #### 5. Build luci-app-dockerman
-该选项默认关闭，即按.config配置文件编译固件，需要编译dockerman请打钩。  
-.config配置文件中未设置编译dockerman，如果打勾了，脚本会在.config中自动添加：  
+该选项默认关闭，即按.config配置文件编译固件，.config配置文件中未设置编译dockerman.  
+需要编译dockerman请打钩，脚本会在.config中自动添加：  
 CONFIG_PACKAGE_luci-app-dockerman=y  
 CONFIG_PACKAGE_kmod-dm=y  
 CONFIG_PACKAGE_kmod-br-netfilter=y  
