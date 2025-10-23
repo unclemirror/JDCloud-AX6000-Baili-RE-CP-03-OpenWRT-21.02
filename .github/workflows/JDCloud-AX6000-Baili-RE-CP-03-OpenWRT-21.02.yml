@@ -140,7 +140,7 @@ jobs:
             echo "Invalid IP address, use default."
         fi
 
-    - name: 设置WiFi驱动版本
+    - name: Set WiFi driver version
       run: |
         cd openwrt
         wifi_driver=$(echo "${{ github.event.inputs.WIFI_DRIVER }}" | sed -E 's/^(v[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*/\1/')
@@ -155,7 +155,7 @@ jobs:
         fi
         echo "Use WiFi Driver: $wifi_driver-fw-$firmware"
 
-    - name: 设置交换机驱动
+    - name: Set switch driver
       run: |
         cd openwrt
         if [ ${{ github.event.inputs.SW_DRIVER }} == 'DSA' ]; then
@@ -166,7 +166,7 @@ jobs:
                 echo "Use Switch Driver: GSW"
         fi
 
-    - name: 使用luci-app-mtk无线配置
+    - name: Wireless configuration using luci-app-mtk
       if: github.event.inputs.APP_MTK == 'true'
       run: |
         cd openwrt
@@ -175,7 +175,7 @@ jobs:
         sed -i 's/CONFIG_PACKAGE_mtwifi-cfg=y/CONFIG_PACKAGE_wifi-profile=y/g' .config
         sed -i 's/CONFIG_PACKAGE_lua-cjson=y/CONFIG_WIFI_NORMAL_SETTING=y/g' .config
 
-    - name: 编译dockerman
+    - name: Compile dockerman
       if: github.event.inputs.DOCKERMAN == 'true'
       run: |
         cd openwrt
@@ -186,7 +186,7 @@ jobs:
         echo "CONFIG_PACKAGE_kmod-nf-ipvs=y" >> .config
         echo "CONFIG_PACKAGE_kmod-veth=y" >> .config
 
-    - name: SSH链接管理
+    - name: SSH link management
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       env:
@@ -219,10 +219,10 @@ jobs:
         else
                 echo "WIFI_VERSION=-v7672" >> $GITHUB_ENV
         fi
-        if sed -n '/jdcloud,re-cp-03)/,/;;/p' target/linux/mediatek/mt7986/base-files/etc/board.d/02_network | grep -q 'ucidef_add_switch "switch0"'; then
-                echo "SWITCH=-gsw" >> $GITHUB_ENV
-        else
+        if [ "${{ github.event.inputs.SW_DRIVER }}" = "DSA" ]; then
                 echo "SWITCH=-dsa" >> $GITHUB_ENV
+        else
+                echo "SWITCH=-gsw" >> $GITHUB_ENV
         fi
         if grep -q 'CONFIG_PACKAGE_mtwifi-cfg=y' .config; then
                 echo "WIFI_INTERFACE=-mtwifi" >> $GITHUB_ENV
