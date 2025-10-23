@@ -69,21 +69,21 @@ DSA：Distributed Switch Architecture 分布式交换架构模式，DSA没有单
 mtwifi-cfg：为mtwifi设计的无线配置工具，兼容openwrt原生luci和netifd，可调整无线驱动的参数较少，配置界面美观友好。  
 luci-app-mtk：源自mtk-sdk提供的配置工具，需要配合wifi-profile脚本使用，可调整无线驱动的几乎所有参数，配置界面较为简陋。
 区别详见大佬的博客[mtwifi无线配置工具说明](https://cmi.hanwckf.top/p/immortalwrt-mt798x/#mtwifi%E6%97%A0%E7%BA%BF%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7%E8%AF%B4%E6%98%8E)
-.config配置文件中已设置使用mtwifi-cfg配置工具：
-CONFIG_PACKAGE_luci-app-mtwifi-cfg=y
-CONFIG_PACKAGE_luci-i18n-mtwifi-cfg-zh-cn=y
-CONFIG_PACKAGE_mtwifi-cfg=y
-CONFIG_PACKAGE_lua-cjson=y
+.config配置文件中已设置使用mtwifi-cfg配置工具：  
+CONFIG_PACKAGE_luci-app-mtwifi-cfg=y  
+CONFIG_PACKAGE_luci-i18n-mtwifi-cfg-zh-cn=y  
+CONFIG_PACKAGE_mtwifi-cfg=y  
+CONFIG_PACKAGE_lua-cjson=y  
 
 - #### 5. Build luci-app-dockerman
 该选项默认关闭，即按.config配置文件编译固件，需要编译dockerman请打钩。  
 .config配置文件中未设置编译dockerman，如果打勾了，脚本会在.config中自动添加：  
-CONFIG_PACKAGE_luci-app-dockerman=y
-CONFIG_PACKAGE_kmod-dm=y
-CONFIG_PACKAGE_kmod-br-netfilter=y
-CONFIG_PACKAGE_kmod-ikconfig=y
-CONFIG_PACKAGE_kmod-nf-ipvs=y
-CONFIG_PACKAGE_kmod-veth=y
+CONFIG_PACKAGE_luci-app-dockerman=y  
+CONFIG_PACKAGE_kmod-dm=y  
+CONFIG_PACKAGE_kmod-br-netfilter=y  
+CONFIG_PACKAGE_kmod-ikconfig=y  
+CONFIG_PACKAGE_kmod-nf-ipvs=y  
+CONFIG_PACKAGE_kmod-veth=y  
 
 - #### Other
 百里5G无线发射功率23dBm，2.4G发送功率25dBm。大佬们已研究出修改5G发射功率的方法。  
