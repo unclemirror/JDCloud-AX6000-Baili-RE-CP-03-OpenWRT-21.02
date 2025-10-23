@@ -290,7 +290,7 @@ jobs:
         else
                 echo "- 未编译luci-app-dockerman" >> release.txt
         fi
-        echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}${{ env.WIFI_VERSION }}${{ env.SWITCH }}${{ env.BUILD_DOCKERMAN }}" >> $GITHUB_OUTPUT
+        echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.TARGET_NAME }}-${{ env.DEVICE_NAME }}${{ env.WIFI_VERSION }}${{ env.SWITCH }}${{ env.BUILD_DOCKERMAN }}" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
