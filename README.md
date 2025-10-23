@@ -19,7 +19,7 @@
 - [ ] Build luci-app-dockerman
 
 - #### 说明
-源码中的WAN、LAN地址顺序已修复并固定了WiFi MAC地址，交换机驱动已改为使用DSA
+源码中的WAN、LAN地址顺序已修复并固定了WiFi MAC地址
 
 - #### 1. Set LAN IP Address
 设置LAN IP地址（路由器登录地址），默认192.168.1.1。 
