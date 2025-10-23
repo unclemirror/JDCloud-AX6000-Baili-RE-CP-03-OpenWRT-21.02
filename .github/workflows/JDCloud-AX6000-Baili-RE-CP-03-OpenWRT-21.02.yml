@@ -20,6 +20,46 @@ on:
         description: 'Set LAN IP Address'
         required: true
         default: '192.168.1.1'
+      WIFI_DRIVER:
+        description: 'Choose WiFi Driver'
+        required: true
+        default: 'v7.6.7.2-fw-20240823(recommend)'
+        type: choice
+        options:
+        - v7.6.7.2-fw-20240823(recommend)
+        - v7.6.6.1-fw-20230808(recommend)
+        - v7.6.7.2-fw-default
+        - v7.6.7.2-fw-20221208
+        - v7.6.7.2-fw-20230421
+        - v7.6.7.2-fw-20230808
+        - v7.6.7.2-fw-20231024
+        - v7.6.6.1-fw-default
+        - v7.6.6.1-fw-20221208
+        - v7.6.6.1-fw-20230421
+        - v7.6.6.1-fw-20231024
+        - v7.6.6.1-fw-20240823
+      SW_DRIVER:
+        description: 'Choose Switch Driver'
+        required: true
+        default: 'DSA'
+        type: choice
+        options:
+        - DSA
+        - GSW
+      APP_MTK:
+        description: 'Use luci-app-mtk wifi config'
+        required: true
+        default: false
+        type: boolean
+      DOCKERMAN:
+        description: 'Build luci-app-dockerman'
+        required: true
+        default: false
+        type: boolean
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 env:
   ###############手动修改##############
