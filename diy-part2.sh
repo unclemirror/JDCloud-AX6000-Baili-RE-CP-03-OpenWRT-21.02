@@ -42,5 +42,5 @@ sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/
 
 ##-----------------Install latest Cloudflare Tunnel-----------------
 mkdir -p /usr/sbin
-wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -O /usr/sbin/cloudflared
+curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /usr/sbin/cloudflared
 chmod +x /usr/sbin/cloudflared
