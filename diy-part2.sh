@@ -19,7 +19,7 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-##-----------------Del old version------------------
+##-----------------Del OAF old version------------------
 rm -rf feeds/packages/net/open-app-filter
 rm -rf feeds/luci/applications/luci-app-appfilter
 
@@ -40,4 +40,7 @@ rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
 
-##-----------------Manually set CPU frequency for MT7986A-----------------
+##-----------------Install latest Cloudflare Tunnel-----------------
+mkdir -p /usr/sbin
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -O /usr/sbin/cloudflared
+chmod +x /usr/sbin/cloudflared
