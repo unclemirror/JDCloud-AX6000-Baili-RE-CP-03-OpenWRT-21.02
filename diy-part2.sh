@@ -19,13 +19,9 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-##-----------------Replace latest OpenAppFilter------------------
-git clone --depth 1 https://github.com/destan19/OpenAppFilter.git /tmp/OpenAppFilter
+##-----------------Del old version------------------
 rm -rf feeds/packages/net/open-app-filter
-mv /tmp/OpenAppFilter/open-app-filter feeds/packages/net/open-app-filter
 rm -rf feeds/luci/applications/luci-app-appfilter
-mv /tmp/OpenAppFilter/luci-app-oaf feeds/luci/applications/luci-app-oaf
-rm -rf /tmp/OpenAppFilter
 
 ##-----------------Replace latest OpenClash------------------
 git clone --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
