@@ -19,6 +19,9 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
+##-----------------Del duplicate packages------------------
+rm -rf feeds/packages/net/open-app-filter
+
 ##-----------------Replace latest OpenClash------------------
 git clone --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
