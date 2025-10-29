@@ -19,7 +19,8 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-##-----------------Del duplicate packages------------------
+##-----------------Replace latest OpenAppFilter------------------
+git clone --depth 1 https://github.com/destan19/OpenAppFilter.git /tmp/OpenAppFilter
 rm -rf feeds/packages/net/open-app-filter
 
 ##-----------------Replace latest OpenClash------------------
