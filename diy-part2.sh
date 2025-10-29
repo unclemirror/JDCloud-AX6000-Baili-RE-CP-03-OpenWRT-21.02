@@ -38,3 +38,5 @@ rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
+
+##-----------------Manually set CPU frequency for MT7986A-----------------
