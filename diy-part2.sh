@@ -39,8 +39,3 @@ rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
-
-##-----------------Install latest Cloudflare Tunnel-----------------
-mkdir -p /usr/sbin
-curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /usr/sbin/cloudflared
-chmod +x /usr/sbin/cloudflared
