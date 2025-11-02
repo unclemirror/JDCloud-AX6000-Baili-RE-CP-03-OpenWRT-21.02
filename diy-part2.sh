@@ -37,11 +37,6 @@ mkdir -p feeds/luci/applications/luci-app-openclash/root/etc/openclash/core
 mv /tmp/clash feeds/luci/applications/luci-app-openclash/root/etc/openclash/core/clash_meta >/dev/null 2>&1
 rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 
-##-----------------Add luci-app-cloudflared------------------
-git clone --depth 1 https://github.com/lmq8267/luci-app-cloudflared.git /tmp/Cloudflared
-mv /tmp/Cloudflared/luci-app-cloudflared feeds/luci/applications/luci-app-cloudflared
-rm -rf /tmp/Cloudflared
-
 ##-----------------Replace latest cloudflared------------------
 rm -rf feeds/packages/net/cloudflared
 curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /tmp/cloudflared-linux-arm64
