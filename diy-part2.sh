@@ -35,9 +35,8 @@ rm -rf /tmp/clash.tar.gz
 rm -rf feeds/packages/net/cloudflared
 curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /tmp/cloudflared
 chmod +x /tmp/cloudflared
-mkdir -p feeds/luci/applications/luci-app-cloudflared
-mv /tmp/cloudflared feeds/luci/applications/luci-app-cloudflared/cloudflared
-chmod +x feeds/luci/applications/luci-app-cloudflared/cloudflared
+mkdir -p feeds/packages
+mv /tmp/cloudflared feeds/packages/cloudflared
 
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
