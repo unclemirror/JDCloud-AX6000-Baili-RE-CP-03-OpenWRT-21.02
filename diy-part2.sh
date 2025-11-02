@@ -44,10 +44,9 @@ rm -rf /tmp/Cloudflared
 
 ##-----------------Replace latest cloudflared------------------
 rm -rf feeds/packages/net/cloudflared
-curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /tmp/Cloudflared
-mv /tmp/Cloudflared/cloudflared-linux-arm64 /usr/sbin/cloudflared
+curl -sL -m 30 --retry 2 https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 -o /tmp/cloudflared-linux-arm64
+mv /tmp/cloudflared-linux-arm64 /usr/sbin/cloudflared
 chmod +x /usr/sbin/cloudflared
-rm -rf /tmp/Cloudflared
 
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
