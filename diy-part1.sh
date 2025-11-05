@@ -20,3 +20,4 @@
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/OpenClash
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone --depth 1 https://github.com/EasyTier/luci-app-easytier.git package/EasyTier
+git clone --depth 1 https://github.com/sirpdboy/luci-app-netspeedtest.git package/netspeedtest
