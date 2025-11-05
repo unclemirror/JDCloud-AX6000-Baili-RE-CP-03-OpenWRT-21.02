@@ -116,7 +116,6 @@ dd if=$(blkid -t PARTLABEL=factory -o device) of=/tmp/mmcblk0px_factory.bin conv
 - #### 使用分支：openwrt-21.02 内核版本：5.4.284
 - #### 使用NekokeCore大佬修改的软件源和luci-theme-design主题
 - #### 自动下载最新版本OpenClash与最新meta内核（master）
-- #### 使用lmq8267大佬编译的luci-app-cloudflared，并自动下载最新的cloudflared二进制文件，存放路径etc/cloudflared/cloudflared
 
 ---
 ## 感谢P3TERX的Actions-OpenWrt
