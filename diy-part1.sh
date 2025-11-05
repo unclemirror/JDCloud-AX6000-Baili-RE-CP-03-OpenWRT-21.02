@@ -17,7 +17,7 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-git clone --depth 1 https://github.com/vernesong/OpenClash.git package/OpenClash
-git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone --depth 1 https://github.com/EasyTier/luci-app-easytier.git package/EasyTier
-git clone --depth 1 https://github.com/sirpdboy/luci-app-netspeedtest.git package/netspeedtest
+git clone https://github.com/vernesong/OpenClash package/OpenClash
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone https://github.com/EasyTier/luci-app-easytier package/EasyTier
+git clone https://github.com/sirpdboy/luci-app-netspeedtest package/netspeedtest
