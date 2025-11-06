@@ -20,14 +20,14 @@
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
 ##-----------------Del OpenClash old version------------------
-rm -rf ./feeds/luci/applications/luci-app-openclash >/dev/null 2>&1
+rm -rf feeds/luci/applications/luci-app-openclash >/dev/null 2>&1
 
 ##-----------------Del OAF old version------------------
-rm -rf ./feeds/packages/net/open-app-filter >/dev/null 2>&1
-rm -rf ./feeds/luci/applications/luci-app-appfilter >/dev/null 2>&1
+rm -rf feeds/packages/net/open-app-filter >/dev/null 2>&1
+rm -rf feeds/luci/applications/luci-app-appfilter >/dev/null 2>&1
 
 ##-----------------Del speedtest-cli old version------------------
-rm -rf ./feeds/packages/net/speedtest-cli >/dev/null 2>&1
+rm -rf feeds/packages/net/speedtest-cli >/dev/null 2>&1
 
 ##-----------------Add latest OpenClash meta core------------------
 curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz -o /tmp/clash.tar.gz
